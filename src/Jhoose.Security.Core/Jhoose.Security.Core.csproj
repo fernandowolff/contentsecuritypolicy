@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net471;net5.0;net6.0</TargetFrameworks>
+		<TargetFrameworks>net461;net471;net5.0;net6.0</TargetFrameworks>
 		<PackageId>Jhoose.Security.Core</PackageId>
 		<RepositoryUrl>https://github.com/andrewmarkham/contentsecuritypolicy</RepositoryUrl>
 		<ProjectUrl>https://github.com/andrewmarkham/contentsecuritypolicy</ProjectUrl>
@@ -35,7 +35,15 @@
 		<PackageReference Include="EPiServer.Framework.AspNet" Version="[11.1.0,12)" />
 		<PackageReference Include="Newtonsoft.Json" Version="[9.0.1,14)" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net471'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+		<PackageReference Include="EPiServer.Framework" Version="[10.10.4,11)" />
+		<PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
+		<PackageReference Include="structuremap-signed" Version="3.1.9.463" />
+		<PackageReference Include="structuremap.web-signed" Version="3.1.6.191" />
+		<PackageReference Include="Microsoft.Tpl.Dataflow" Version="4.5.24" />
+		<PackageReference Include="Newtonsoft.Json" Version="[9.0.1,14)" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net471' or '$(TargetFramework)' == 'net461'">
 		<Reference Include="System.Web" />
 	</ItemGroup>
 </Project>

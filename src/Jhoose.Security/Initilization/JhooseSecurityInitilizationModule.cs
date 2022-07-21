@@ -24,7 +24,9 @@ namespace Jhoose.Security.Initilization
         {
             var services = context.Services;
 
-
+#if NET462_OR_GREATER
+            // TODO: revisit this
+            // Couldn't translate this one to CMS 10 on .net4.6.1. Might cause issues when adding package to a project with CMS 10.
             services.Configure<ProtectedModuleOptions>(m =>
             {
                 m.Items.Add(new ModuleDetails
@@ -32,8 +34,7 @@ namespace Jhoose.Security.Initilization
                     Name = "Jhoose.Security"
                 });
             });
-
-
+#endif
             services.AddScoped<ICspPolicyRepository, StandardCspPolicyRepository>();
             services.AddScoped<ICspProvider, StandardCspProvider>();
             services.AddSingleton<ICacheManager, EpiserverCacheManager>();

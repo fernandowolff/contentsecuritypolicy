@@ -4,7 +4,6 @@ using Jhoose.Security.Core.Models;
 using System;
 using System.Configuration;
 
-
 namespace Jhoose.Security.Configuration
 {
     public class CrossOriginEmbedderPolicyHeaderElement : ResponseHeaderElement<CrossOriginEmbedderPolicyHeader>
